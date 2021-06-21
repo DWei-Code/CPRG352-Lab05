@@ -10,6 +10,6 @@
         
         <label>Hello ${username}</label>
         
-        <a href="home?logout" >Log out</a>
+        <a href="login?logout" >Log out</a>
     </body>
 </html>
