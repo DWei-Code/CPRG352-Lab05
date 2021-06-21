@@ -9,13 +9,13 @@
         <h1>Login</h1>
         <form method="POST" action="login">
             <label>Username:</label>
-            <input type="text" name="user_name" >
+            <input type="text" name="user_name" value="${saveName}">
             <br>
             <label>Password:</label>
             <input type="password" name="password">
             <br>
             <input type="submit" value="Log in">
-            <p>${errorText}</p>
+            <p>${displayText}</p>
         </form>
 
     </body>

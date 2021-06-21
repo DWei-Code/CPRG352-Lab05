@@ -8,8 +8,11 @@
     <body>
         <h1>Home Page</h1>
         
-        <label>Hello ${username}</label>
+        <form method="GET" action="login">
+        <label>Hello ${userName}</label>
+        <br>
         
         <a href="login?logout" >Log out</a>
+        </form>
     </body>
 </html>

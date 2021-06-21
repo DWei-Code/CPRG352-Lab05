@@ -8,31 +8,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 public class HomeServlet extends HttpServlet {
 
-   
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // get the current session
-        // HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
         
-        String action = request.getParameter("logout");
-        if (action == null) {
+        // checks if there is a session username, if so stay on home page
+        // unless logout button is clicked
+        if (session.getAttribute("userName") == null) {
             getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+
+        } else {
+            getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
         }
-        
-        // session.setAttribute("logout", action);
-        
+
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+
     }
 
 }
